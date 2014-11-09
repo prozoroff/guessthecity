@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Guess The City</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCZOXlIZdfYBcn_W8UrY-JYrE3eueQq4_k&sensor=false&libraries=geometry'></script>
+
+    <script type='text/javascript' src='js/rnd.js'></script>
+    <script type='text/javascript' src='js/minimap.js'></script>
+    <script type='text/javascript' src='js/streetviewmap.js'></script>
+    <script type='text/javascript' src='js/roundmap.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+
+
+    <!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+
+
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+<div class="container" id='content_menu' style="display: block">
+	<div class="row clearfix">
+		<div class="col-md-12 column ">
+			<div class="page-header" align="center">
+				<!--<h1>
+					Guess The City <small>  география скучна?</small>
+				</h1>-->
+                <img src="img/city.jpg" width="100%">
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 col-sm-12 column" align="center">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');"
+                 onclick="toggle_map(0);">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="img/russia.jpg" width="320">
+                    </div>
+                    <div class="back russia_map">
+                        <h1 class="card_title"> Западная Россия</h1>
+                        <p class="card_text">Европейская часть России, географически относящаяся к Восточной Европе. Её границей являются Уральские горы, граница с Казахстаном и реки Кума и Маныч. Добрые 23 % территории России и около 40 % территории всей Европы.</p>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="col-md-4 col-sm-12 column" align="center">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');"
+                 onclick="toggle_map(1);">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="img/spb.jpg" width="320">
+                    </div>
+                    <div class="back spb_map">
+                        <h1 class="card_title"> Санкт-Петербург</h1>
+                        <p class="card_text">Культурная столица России, северная Венеция, детище Петра — так часто называют Санкт-Петербург, второй по величине город нашей необъятной с населением в 4,8 млн человек. Немногие города мира могут похвастать таким количеством достопримечательностей, музейных собраний, оперных и драматических театров, усадеб и дворцов, парков и памятников.
+                        </p>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="col-md-4 col-sm-12 column" align="center">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');"
+                 onclick="toggle_map(2);">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="img/moscow.jpg" width="320">
+                    </div>
+                    <div class="back moscow_map">
+                        <h1 class="card_title"> Москва</h1>
+                        <p class="card_text">Cтолица России - остальные эпитеты по сравнению с этим меркнут. Как ни банально это звучит, Москва — город контрастов. Это и «третий Рим», и «большая деревня», и «нерезиновая», место для избранных и для всех.
+                        </p>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+
+    <div class="row clearfix"  style="margin-top: 30px">
+        <div class="col-md-4 col-sm-12 column" align="center">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');"
+                 onclick="toggle_map(3);">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="img/yaroslavl.jpg" width="320">
+                    </div>
+                    <div class="back yaroslavl_map">
+                        <h1 class="card_title"> Ярославль</h1>
+                        <p class="card_text">Жемчужина Золотого кольца России, город с тысячелетней историей. Первое упоминание о Ярославле можно найти в летописи 1071 года. Но история Ярославля начинается еще в 1010 году, когда ростовский князь Ярослав Мудрый заложил крепость на месте поселения Медвежий угол, в районе слияния рек Волга и Которосль.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-md-4 col-sm-12 column" align="center">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="img/kazan.jpg" width="320">
+                        </div>
+                        <div class="back kazan_map">
+                            <h1 class="card_title"> Казань (скоро)</h1>
+                            <p class="card_text">Казань — столица Республики Татарстан. Один из крупнейших экономических, научных и культурных центров России. Город, площадью около 412 кв. км. где проживает 1,2 млн. человек более 101 национальности, расположен на левобережье реки Волги по обеим сторонам реки Казанки.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 column" align="center">
+                <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                    <div class="flipper">
+                        <div class="front">
+                            <img src="img/nnovgorod.jpg" width="320">
+                        </div>
+                        <div class="back nnovgorod_map">
+                            <h1 class="card_title"> Нижний Новгород (скоро)</h1>
+                            <p class="card_text">Нижний Новгород называют третьей столицей и «карманом России». Город был основан в 1221 году владимиро-суздальским князем Юрием Всеволодовичем на мордовских землях, как пограничная крепость. В городе сохранилось немало уникальных памятников истории, архитектуры и культуры, что дало основание ЮНЕСКО включить Нижний Новгород в список 100 городов мира, представляющих мировую историческую и культурную ценность.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+	<div class="modal-footer" >
+        <div class="col-md-12 column" align="left">
+            <p>Угадывайте города России по панорамам Google.</p>
+            <p><a href="mailto:guessthecity@mail.ru">Не стесняйтесь написать нам отзыв или предложение</a></p>
+        </div>
+		<div class="col-md-12 column" align="left">
+			<p>© 2014 Guess The City</p>
+		</div>
+	</div>
+</div>
+
+<div id='content_map' style="display: none">
+    <div id="roundEnd"></div>
+    <div id="endGame"></div>
+    <div id='scoreBoard'>
+        <span class='round'>Текщий раунд: <b>1/5</b></span><br/>
+        <span class='roundScore'>Предыдущий результат: <b>0</b></span><br/>
+        <span class='totalScore'>Очки: <b>0</b></span>
+    </div>
+    <div id='miniMap'></div>
+    <div id='guessButton' class="btn btn-large">Ответить</div>
+    <div id='homeLink' class="btn-link" onclick="toggle_menu();">На главную</div>
+    <div id='pano'></div>
+</div>
+
+</body>
+</html>
