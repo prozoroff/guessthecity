@@ -1,8 +1,8 @@
 $( ".circle" ).each( function() {
 
-    var radius = $( this ).outerWidth() / 2;
-        left = $( this ).offset().left,
-        top = $( this ).offset().top;
+    var radius = $( this ).outerWidth() / 2,
+        left = $( this ).position().left,
+        top = $( this ).position().top;
 
     $( this ).data( {
 
